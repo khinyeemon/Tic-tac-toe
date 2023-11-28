@@ -22,7 +22,7 @@ function boxClicked(e) {
         spaces[id] = currentPlayer;
         e.target.innerText = currentPlayer;
         if (playerHasWon() !== false) {
-            playerText = '${currentPlayer} has won';
+            playerText.innerText = currentPlayer + ' ' + 'has won.';
             let winning_block = playerHasWon();
             winning_block.map(box => boxes[box].style.backgroundColor = winnerIndicator);
             return
@@ -60,7 +60,7 @@ function restart() {
         box.innerText = '';
         box.style.backgroundColor = '';
     })
-    playerText = 'Tic Tac Toe';
+    playerText.innerText = 'Tic Tac Toe';
     currentPlayer = X_TEXT;
 }
 startGame();
